@@ -155,21 +155,21 @@ export default function Page() {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100">
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-neutral-950/70 backdrop-blur">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
+      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur">
         <Container>
           <div className="flex items-center justify-between py-4">
             <Link href="/" className="flex items-center gap-3">
-              <div className="grid h-10 w-10 place-items-center rounded-2xl bg-white font-black text-neutral-950">
+              <div className="grid h-10 w-10 place-items-center rounded-2xl bg-white font-black text-slate-900">
                 N
               </div>
               <div>
                 <p className="text-sm font-semibold">{brand.name}</p>
-                <p className="text-xs text-neutral-400">{lang === "en" ? brand.taglineEN : brand.taglineFR}</p>
+                <p className="text-xs text-slate-500">{lang === "en" ? brand.taglineEN : brand.taglineFR}</p>
               </div>
             </Link>
 
-            <nav className="hidden items-center gap-6 text-sm text-neutral-200 md:flex">
+            <nav className="hidden items-center gap-6 text-sm text-slate-700 md:flex">
               <a className="hover:text-white" href={links.solutions}>{t.nav.solutions}</a>
               <a className="hover:text-white" href={links.industries}>{t.nav.industries}</a>
               <a className="hover:text-white" href={links.process}>{t.nav.process}</a>
@@ -180,7 +180,7 @@ export default function Page() {
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setLang(lang === "en" ? "fr" : "en")}
-                className="rounded-2xl border border-white/15 bg-white/5 px-3 py-2 text-xs font-semibold text-neutral-200 hover:bg-white/10"
+                className="rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-emerald-50"
                 aria-label="Toggle language"
               >
                 {lang === "en" ? "FR" : "EN"}
@@ -202,20 +202,20 @@ export default function Page() {
                 </div>
 
                 <h1 className="mt-6 text-4xl font-semibold leading-tight md:text-6xl">{t.hero.title}</h1>
-                <p className="mt-5 text-base text-neutral-300 md:text-lg">{t.hero.subtitle}</p>
+                <p className="mt-5 text-base text-slate-600 md:text-lg">{t.hero.subtitle}</p>
 
                 <div className="mt-7 flex flex-wrap gap-3">
                   <Button href={links.contact}>{t.hero.cta1}</Button>
                   <Button href={links.pricing} variant="secondary">{t.hero.cta2}</Button>
                 </div>
 
-                <p className="mt-5 text-sm text-neutral-400">{t.hero.trust}</p>
+                <p className="mt-5 text-sm text-slate-500">{t.hero.trust}</p>
 
                 <div className="mt-10 grid gap-4 md:grid-cols-3">
                   {t.proof.items.map((it: any) => (
-                    <div key={it.title} className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                    <div key={it.title} className="rounded-3xl border border-slate-200 bg-white p-5">
                       <p className="text-sm font-semibold">{it.title}</p>
-                      <p className="mt-2 text-sm text-neutral-300">{it.desc}</p>
+                      <p className="mt-2 text-sm text-slate-600">{it.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -236,9 +236,9 @@ export default function Page() {
           <Container>
             <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
               <div>
-                <p className="text-sm text-neutral-400">{brand.locationFR}</p>
+                <p className="text-sm text-slate-500">{brand.locationFR}</p>
                 <h2 className="mt-2 text-2xl font-semibold md:text-3xl">{t.nav.solutions}</h2>
-                <p className="mt-2 text-sm text-neutral-300">
+                <p className="mt-2 text-sm text-slate-600">
                   {lang === "en" ? "Each page is a dynamic route generated from data." : "Chaque page est une route dynamique générée depuis des données."}
                 </p>
               </div>
@@ -250,7 +250,7 @@ export default function Page() {
                 <Card key={s.slug} title={s.title} desc={s.subtitle}>
                   <div className="flex flex-wrap gap-2">
                     {s.channels.slice(0, 3).map((c) => (
-                      <span key={c} className="rounded-2xl border border-white/10 bg-neutral-950/40 px-3 py-2 text-xs text-neutral-200">{c}</span>
+                      <span key={c} className="rounded-2xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs text-slate-700">{c}</span>
                     ))}
                   </div>
 
@@ -265,16 +265,16 @@ export default function Page() {
           </Container>
         </section>
 
-        <section id="industries" className="border-t border-white/10 py-16 md:py-20">
+        <section id="industries" className="border-t border-slate-200 py-16 md:py-20">
           <Container>
             <h2 className="text-2xl font-semibold md:text-3xl">{t.nav.industries}</h2>
-            <p className="mt-2 text-sm text-neutral-300">{lang === "en" ? "We adapt flows to your sector and volume." : "Nous adaptons les flux à votre secteur et à votre volume."}</p>
+            <p className="mt-2 text-sm text-slate-600">{lang === "en" ? "We adapt flows to your sector and volume." : "Nous adaptons les flux à votre secteur et à votre volume."}</p>
 
             <div className="mt-8 grid gap-4 md:grid-cols-5">
               {industries.map((i) => (
-                <Link key={i.slug} href={`/industries/${i.slug}`} className="rounded-3xl border border-white/10 bg-white/5 p-5 shadow-soft transition hover:bg-white/10">
+                <Link key={i.slug} href={`/industries/${i.slug}`} className="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft transition hover:bg-emerald-50">
                   <p className="text-sm font-semibold">{i.title}</p>
-                  <p className="mt-2 text-xs text-neutral-300">{lang === "en" ? "See examples →" : "Voir exemples →"}</p>
+                  <p className="mt-2 text-xs text-slate-600">{lang === "en" ? "See examples →" : "Voir exemples →"}</p>
                 </Link>
               ))}
             </div>
@@ -284,39 +284,39 @@ export default function Page() {
         <section id="process" className="py-16 md:py-20">
           <Container>
             <h2 className="text-2xl font-semibold md:text-3xl">{t.process.title}</h2>
-            <p className="mt-2 text-sm text-neutral-300">{t.process.subtitle}</p>
+            <p className="mt-2 text-sm text-slate-600">{t.process.subtitle}</p>
 
             <div className="mt-8 grid gap-4 md:grid-cols-4">
               {t.process.steps.map((s: any) => (
-                <div key={s.k} className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-soft">
+                <div key={s.k} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
                   <div className="flex items-center gap-3">
-                    <span className="grid h-9 w-9 place-items-center rounded-2xl bg-white text-sm font-bold text-neutral-950">{s.k}</span>
+                    <span className="grid h-9 w-9 place-items-center rounded-2xl bg-white text-sm font-bold text-slate-900">{s.k}</span>
                     <p className="font-semibold">{s.title}</p>
                   </div>
-                  <p className="mt-3 text-sm text-neutral-300">{s.desc}</p>
+                  <p className="mt-3 text-sm text-slate-600">{s.desc}</p>
                 </div>
               ))}
             </div>
           </Container>
         </section>
 
-        <section id="pricing" className="border-t border-white/10 py-16 md:py-20">
+        <section id="pricing" className="border-t border-slate-200 py-16 md:py-20">
           <Container>
             <h2 className="text-2xl font-semibold md:text-3xl">{t.pricing.title}</h2>
-            <p className="mt-2 text-sm text-neutral-300">{t.pricing.subtitle}</p>
+            <p className="mt-2 text-sm text-slate-600">{t.pricing.subtitle}</p>
 
             <div className="mt-8 grid gap-4 md:grid-cols-3">
               {t.pricing.cards.map((c: any) => (
-                <div key={c.name} className={`rounded-3xl border p-6 shadow-soft ${c.featured ? "border-white/30 bg-white/10" : "border-white/10 bg-white/5"}`}>
+                <div key={c.name} className={`rounded-3xl border p-6 shadow-soft ${c.featured ? "border-white/30 bg-emerald-50" : "border-slate-200 bg-white"}`}>
                   <div className="flex items-start justify-between gap-3">
                     <div>
                       <p className="text-lg font-semibold">{c.name}</p>
-                      <p className="mt-1 text-xs text-neutral-300">{c.for}</p>
+                      <p className="mt-1 text-xs text-slate-600">{c.for}</p>
                     </div>
-                    {c.featured && <span className="rounded-2xl bg-white px-3 py-1 text-xs font-semibold text-neutral-950">{lang === "en" ? "Most popular" : "Le plus choisi"}</span>}
+                    {c.featured && <span className="rounded-2xl bg-white px-3 py-1 text-xs font-semibold text-slate-900">{lang === "en" ? "Most popular" : "Le plus choisi"}</span>}
                   </div>
                   <p className="mt-4 text-2xl font-semibold">{c.price}</p>
-                  <ul className="mt-4 space-y-2 text-sm text-neutral-200">
+                  <ul className="mt-4 space-y-2 text-sm text-slate-700">
                     {c.items.map((x: string) => (
                       <li key={x} className="flex gap-2">
                         <span className="mt-1 h-1.5 w-1.5 rounded-full bg-white/70" />
@@ -331,7 +331,7 @@ export default function Page() {
               ))}
             </div>
 
-            <p className="mt-4 text-sm text-neutral-400">{t.pricing.note}</p>
+            <p className="mt-4 text-sm text-slate-500">{t.pricing.note}</p>
           </Container>
         </section>
 
@@ -340,39 +340,39 @@ export default function Page() {
             <h2 className="text-2xl font-semibold md:text-3xl">{t.faq.title}</h2>
             <div className="mt-8 grid gap-4 md:grid-cols-2">
               {t.faq.items.map((x: any) => (
-                <div key={x.q} className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-soft">
+                <div key={x.q} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
                   <p className="font-semibold">{x.q}</p>
-                  <p className="mt-2 text-sm text-neutral-300">{x.a}</p>
+                  <p className="mt-2 text-sm text-slate-600">{x.a}</p>
                 </div>
               ))}
             </div>
           </Container>
         </section>
 
-        <section id="contact" className="border-t border-white/10 py-16 md:py-20">
+        <section id="contact" className="border-t border-slate-200 py-16 md:py-20">
           <Container>
             <div className="grid gap-6 md:grid-cols-2">
-              <div className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-soft md:p-8">
+              <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft md:p-8">
                 <h2 className="text-2xl font-semibold">{t.contact.title}</h2>
-                <p className="mt-2 text-sm text-neutral-300">{t.contact.subtitle}</p>
+                <p className="mt-2 text-sm text-slate-600">{t.contact.subtitle}</p>
 
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Button href={`mailto:${brand.email}`}>Email</Button>
                   <Button href={`https://wa.me/${brand.whatsapp.replace("+", "")}`} variant="secondary">WhatsApp</Button>
                 </div>
 
-                <p className="mt-6 text-sm text-neutral-400">{lang === "en" ? "Or use the Get started form above." : "Ou utilisez le formulaire “Get started” en haut."}</p>
+                <p className="mt-6 text-sm text-slate-500">{lang === "en" ? "Or use the Get started form above." : "Ou utilisez le formulaire “Get started” en haut."}</p>
               </div>
 
-              <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-transparent p-6 shadow-soft md:p-8">
+              <div className="rounded-3xl border border-slate-200 bg-gradient-to-b from-white/10 to-transparent p-6 shadow-soft md:p-8">
                 <p className="text-sm font-semibold">{brand.name}</p>
-                <p className="mt-2 text-sm text-neutral-300">
+                <p className="mt-2 text-sm text-slate-600">
                   {lang === "en" ? brand.locationEN : brand.locationFR} • {lang === "en" ? brand.taglineEN : brand.taglineFR}
                 </p>
 
-                <div className="mt-6 rounded-3xl border border-white/10 bg-white/5 p-6">
+                <div className="mt-6 rounded-3xl border border-slate-200 bg-white p-6">
                   <p className="text-sm font-semibold">Stack (exemples)</p>
-                  <ul className="mt-3 space-y-2 text-sm text-neutral-200">
+                  <ul className="mt-3 space-y-2 text-sm text-slate-700">
                     <li>• WhatsApp Business API / Telegram / Facebook Messenger</li>
                     <li>• Plateforme bot : Kore.ai (ou custom)</li>
                     <li>• CX / ticketing : Zendesk</li>
@@ -384,16 +384,16 @@ export default function Page() {
         </section>
       </main>
 
-      <footer className="border-t border-white/10 py-10">
+      <footer className="border-t border-slate-200 py-10">
         <Container>
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <div>
               <p className="font-semibold">{brand.name}</p>
-              <p className="text-sm text-neutral-400">
+              <p className="text-sm text-slate-500">
                 {lang === "en" ? brand.locationEN : brand.locationFR} • {lang === "en" ? brand.taglineEN : brand.taglineFR}
               </p>
             </div>
-            <p className="text-sm text-neutral-400">© {new Date().getFullYear()} {brand.name}. {t.footer.rights}</p>
+            <p className="text-sm text-slate-500">© {new Date().getFullYear()} {brand.name}. {t.footer.rights}</p>
           </div>
         </Container>
       </footer>

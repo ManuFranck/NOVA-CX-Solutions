@@ -6,7 +6,7 @@ export function Container({ children }: { children: React.ReactNode }) {
 
 export function Pill({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-200">
+    <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-emerald-50 px-3 py-1 text-xs text-emerald-700">
       {children}
     </span>
   );
@@ -23,8 +23,8 @@ export function Button({
 }) {
   const cls =
     variant === "primary"
-      ? "bg-white text-neutral-950 hover:bg-white/90"
-      : "border border-white/15 bg-white/5 text-neutral-100 hover:bg-white/10";
+      ? "bg-emerald-600 text-white hover:bg-emerald-700"
+      : "border border-slate-200 bg-white text-slate-900 hover:bg-slate-50";
   if (href) {
     return (
       <a
@@ -54,9 +54,9 @@ export function Card({
   children?: React.ReactNode;
 }) {
   return (
-    <div className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-soft">
+    <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
       <h3 className="text-lg font-semibold">{title}</h3>
-      {desc && <p className="mt-2 text-sm text-neutral-300">{desc}</p>}
+      {desc && <p className="mt-2 text-sm text-slate-600">{desc}</p>}
       {children && <div className="mt-4">{children}</div>}
     </div>
   );

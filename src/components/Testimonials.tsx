@@ -12,19 +12,19 @@ export function Testimonials() {
   const it = useMemo(() => items[i % items.length], [i]);
 
   return (
-    <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-transparent p-6 shadow-soft">
-      <p className="text-sm text-neutral-300">Témoignage</p>
+    <div className="rounded-3xl border border-slate-200 bg-gradient-to-b from-white/10 to-transparent p-6 shadow-soft">
+      <p className="text-sm text-slate-600">Témoignage</p>
       <p className="mt-3 text-lg font-semibold leading-relaxed">“{it.quote}”</p>
       <div className="mt-4 flex items-center justify-between">
-        <div className="text-sm text-neutral-300">
+        <div className="text-sm text-slate-600">
           <span className="font-semibold text-neutral-100">{it.name}</span>{" "}
-          <span className="text-neutral-400">— {it.org}</span>
+          <span className="text-slate-500">— {it.org}</span>
         </div>
         <div className="flex gap-2">
-          <button onClick={() => setI((v) => (v - 1 + items.length) % items.length)} className="rounded-2xl border border-white/15 bg-white/5 px-3 py-2 text-xs font-semibold hover:bg-white/10">
+          <button onClick={() => setI((v) => (v - 1 + items.length) % items.length)} className="rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold hover:bg-emerald-50">
             Prev
           </button>
-          <button onClick={() => setI((v) => (v + 1) % items.length)} className="rounded-2xl border border-white/15 bg-white/5 px-3 py-2 text-xs font-semibold hover:bg-white/10">
+          <button onClick={() => setI((v) => (v + 1) % items.length)} className="rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold hover:bg-emerald-50">
             Next
           </button>
         </div>

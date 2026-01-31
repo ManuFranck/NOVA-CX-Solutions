@@ -60,22 +60,22 @@ export function GetStartedWizard({ onSubmit }: { onSubmit: (payload: Record<stri
   }
 
   return (
-    <div className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-soft">
+    <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
       <div className="flex items-center justify-between">
         <p className="text-sm font-semibold">Get started</p>
-        <p className="text-xs text-neutral-400">{step === "done" ? "✓ envoyé" : step}</p>
+        <p className="text-xs text-slate-500">{step === "done" ? "✓ envoyé" : step}</p>
       </div>
 
       {step === "service" && (
         <>
-          <p className="mt-3 text-sm text-neutral-300">Quel service recherchez-vous ?</p>
+          <p className="mt-3 text-sm text-slate-600">Quel service recherchez-vous ?</p>
           <div className="mt-4 grid gap-2">
             {services.map((s) => (
               <button
                 key={s.id}
                 onClick={() => setData((d) => ({ ...d, service: s.id }))}
                 className={`rounded-2xl border px-4 py-3 text-left text-sm transition ${
-                  data.service === s.id ? "border-white/30 bg-white/10" : "border-white/10 bg-neutral-950/30 hover:bg-white/5"
+                  data.service === s.id ? "border-white/30 bg-emerald-50" : "border-slate-200 bg-slate-50 hover:bg-white"
                 }`}
               >
                 {s.label}
@@ -87,14 +87,14 @@ export function GetStartedWizard({ onSubmit }: { onSubmit: (payload: Record<stri
 
       {step === "timeline" && (
         <>
-          <p className="mt-3 text-sm text-neutral-300">Quand souhaitez-vous démarrer ?</p>
+          <p className="mt-3 text-sm text-slate-600">Quand souhaitez-vous démarrer ?</p>
           <div className="mt-4 grid gap-2">
             {timelines.map((x) => (
               <button
                 key={x}
                 onClick={() => setData((d) => ({ ...d, timeline: x }))}
                 className={`rounded-2xl border px-4 py-3 text-left text-sm transition ${
-                  data.timeline === x ? "border-white/30 bg-white/10" : "border-white/10 bg-neutral-950/30 hover:bg-white/5"
+                  data.timeline === x ? "border-white/30 bg-emerald-50" : "border-slate-200 bg-slate-50 hover:bg-white"
                 }`}
               >
                 {x}
@@ -106,14 +106,14 @@ export function GetStartedWizard({ onSubmit }: { onSubmit: (payload: Record<stri
 
       {step === "channel" && (
         <>
-          <p className="mt-3 text-sm text-neutral-300">Votre canal principal ?</p>
+          <p className="mt-3 text-sm text-slate-600">Votre canal principal ?</p>
           <div className="mt-4 grid grid-cols-2 gap-2">
             {channels.map((x) => (
               <button
                 key={x}
                 onClick={() => setData((d) => ({ ...d, channel: x }))}
                 className={`rounded-2xl border px-4 py-3 text-sm transition ${
-                  data.channel === x ? "border-white/30 bg-white/10" : "border-white/10 bg-neutral-950/30 hover:bg-white/5"
+                  data.channel === x ? "border-white/30 bg-emerald-50" : "border-slate-200 bg-slate-50 hover:bg-white"
                 }`}
               >
                 {x}
@@ -125,30 +125,30 @@ export function GetStartedWizard({ onSubmit }: { onSubmit: (payload: Record<stri
 
       {step === "details" && (
         <>
-          <p className="mt-3 text-sm text-neutral-300">Vos informations</p>
+          <p className="mt-3 text-sm text-slate-600">Vos informations</p>
           <div className="mt-4 grid gap-2">
-            <input className="w-full rounded-2xl border border-white/10 bg-neutral-950/40 px-4 py-3 text-sm outline-none focus:border-white/30" placeholder="Nom" value={data.name} onChange={(e) => setData((d) => ({ ...d, name: e.target.value }))} />
-            <input className="w-full rounded-2xl border border-white/10 bg-neutral-950/40 px-4 py-3 text-sm outline-none focus:border-white/30" placeholder="Entreprise" value={data.company} onChange={(e) => setData((d) => ({ ...d, company: e.target.value }))} />
-            <input className="w-full rounded-2xl border border-white/10 bg-neutral-950/40 px-4 py-3 text-sm outline-none focus:border-white/30" placeholder="Email pro" value={data.email} onChange={(e) => setData((d) => ({ ...d, email: e.target.value }))} />
-            <input className="w-full rounded-2xl border border-white/10 bg-neutral-950/40 px-4 py-3 text-sm outline-none focus:border-white/30" placeholder="Téléphone" value={data.phone} onChange={(e) => setData((d) => ({ ...d, phone: e.target.value }))} />
-            <textarea className="min-h-[90px] w-full rounded-2xl border border-white/10 bg-neutral-950/40 px-4 py-3 text-sm outline-none focus:border-white/30" placeholder="Message (optionnel)" value={data.message} onChange={(e) => setData((d) => ({ ...d, message: e.target.value }))} />
+            <input className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-white/30" placeholder="Nom" value={data.name} onChange={(e) => setData((d) => ({ ...d, name: e.target.value }))} />
+            <input className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-white/30" placeholder="Entreprise" value={data.company} onChange={(e) => setData((d) => ({ ...d, company: e.target.value }))} />
+            <input className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-white/30" placeholder="Email pro" value={data.email} onChange={(e) => setData((d) => ({ ...d, email: e.target.value }))} />
+            <input className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-white/30" placeholder="Téléphone" value={data.phone} onChange={(e) => setData((d) => ({ ...d, phone: e.target.value }))} />
+            <textarea className="min-h-[90px] w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-white/30" placeholder="Message (optionnel)" value={data.message} onChange={(e) => setData((d) => ({ ...d, message: e.target.value }))} />
           </div>
         </>
       )}
 
       {step === "done" && (
-        <div className="mt-6 rounded-2xl border border-white/10 bg-neutral-950/30 p-4">
+        <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-4">
           <p className="font-semibold">Merci 👋</p>
-          <p className="mt-1 text-sm text-neutral-300">Votre demande a été envoyée. On vous contacte rapidement.</p>
+          <p className="mt-1 text-sm text-slate-600">Votre demande a été envoyée. On vous contacte rapidement.</p>
         </div>
       )}
 
       {step !== "done" && (
         <div className="mt-6 flex gap-2">
-          <button onClick={back} className="w-1/3 rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-sm font-semibold hover:bg-white/10">
+          <button onClick={back} className="w-1/3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold hover:bg-emerald-50">
             Back
           </button>
-          <button disabled={!canNext || loading} onClick={next} className="w-2/3 rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-neutral-950 disabled:opacity-50">
+          <button disabled={!canNext || loading} onClick={next} className="w-2/3 rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-slate-900 disabled:opacity-50">
             {step === "details" ? (loading ? "Sending..." : "Submit") : "Next"}
           </button>
         </div>
